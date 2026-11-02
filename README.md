@@ -6,8 +6,8 @@ Built for **Devixo Solutions — Task 04: Full-Stack E-Commerce / Business Manag
 
 | | |
 |---|---|
-| **Live store (Netlify)** | `ADD-YOUR-NETLIFY-URL-HERE` |
-| **API (Vercel)** | `ADD-YOUR-VERCEL-URL-HERE/api/health` |
+| **Live store (Netlify)** | https://ember-oud.netlify.app |
+| **API (Vercel)** | https://perfume-rho-gules.vercel.app/ |
 | **Admin panel** | `<live store>/admin` (admin account only) |
 
 ## Screenshots
@@ -92,7 +92,6 @@ npm install
 npm run dev                 # http://localhost:5173
 ```
 
-> Windows: do not keep the project in a folder whose name contains `&`; it breaks npm scripts.
 
 ### Environment variables
 
@@ -111,9 +110,9 @@ npm run dev                 # http://localhost:5173
 
 | Variable | Purpose |
 |---|---|
-| `VITE_API_URL` | API base URL, e.g. `https://your-api.vercel.app/api` |
+| `VITE_API_URL` | API base URL, e.g. 'https://perfume-rho-gules.vercel.app/api' |
 
-`VITE_` variables are public in the browser bundle. Never put secrets in them.
+
 
 ## API reference
 
@@ -149,14 +148,14 @@ The backend runs on **Vercel** and the frontend on **Netlify**. Deploy the backe
 1. Push the repository to GitHub, then in Vercel choose **Add New → Project** and import it.
 2. Set **Root Directory** to `backend`. Framework preset: **Other**. Leave build settings empty.
 3. Add the environment variables: `MONGO_URI`, `JWT_SECRET`, `JWT_EXPIRES_IN`, `NODE_ENV=production` and `CLIENT_URL` (temporarily `http://localhost:5173`).
-4. Deploy and open `https://YOUR-API.vercel.app/api/health`. It should return `"ok": true`.
+4. Deploy and open `https://perfume-rho-gules.vercel.app/`. It should return `"ok": true`.
 5. Seed the production database once from your computer, with `backend/.env` pointing at the same Atlas database: `npm run seed` and `npm run create-admin`.
 
 ### 3. Frontend on Netlify
 1. In Netlify choose **Add new site → Import an existing project** and select the repository.
 2. The settings are read from `netlify.toml` (base `frontend`, build `npm run build`, publish `dist`).
-3. Add the environment variable `VITE_API_URL = https://YOUR-API.vercel.app/api`.
-4. Deploy and note the site URL, e.g. `https://your-store.netlify.app`.
+3. Add the environment variable `VITE_API_URL = https://perfume-rho-gules.vercel.app/`.
+4. Deploy and note the site URL, e.g. `https://ember-oud.netlify.app/`.
 
 ### 4. Connect them
 In Vercel, change `CLIENT_URL` to the exact Netlify origin (no trailing slash) and **redeploy** the backend. Then test registration, checkout and `/admin` on the live site.
